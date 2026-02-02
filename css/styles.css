@@ -103,6 +103,7 @@ main {
   background-color: #fffbf3;
   z-index: 1;
   margin-top: 90px; /* espace sous le nuage */
+  z-index: -1;
 }
 
 .nuage {
@@ -296,14 +297,14 @@ main {
 
   /* Nuage plus petit */
   .nuage {
-    width: 900px;
-    bottom: -92px;
+    width: 100%;
+    bottom: 20px;
   }
 
   /* ABOUT US */
   .about-us {
     padding: 60px 25px;
-    gap: 30px;
+    gap: 40px;
   }
 
   .about-title {
@@ -377,4 +378,36 @@ main {
     object-fit: cover;
   }
 
+  .background {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-color: #fffbf3;
+  z-index: 1;
+  margin-top: -25px; /* espace sous le nuage */
+  z-index: -1;
+}
+.about-title {
+  padding-top: 90px;
+}
+}
+@media (max-width: 600px) {
+  /* Nuage plus petit */
+  .nuage {
+    width: 100%;
+    bottom: 100px;
+  }
+
+    .background {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-color: #fffbf3;
+  z-index: 1;
+  margin-top: -110px; /* espace sous le nuage */
+  z-index: -1;
+}
+.about-title {
+  padding-top: 90px;
+}
 }
