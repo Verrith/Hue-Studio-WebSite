@@ -3,22 +3,19 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden; /* <-- empêche le scroll horizontal */
+  overflow-y: auto;   /* <-- permet le scroll vertical */
   background: black;
-  color: white;
 }
 
-/* FOND COULEUR + STICKERS */
-.background {
+.background-color {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -2;
-
-  /* COULEUR DERRIÈRE LES STICKERS (à ajuster si tu veux) */
   background: radial-gradient(circle at center, #ffcc00, #ff0066);
+  z-index: -2;
 }
 
 .fond-stickers {
@@ -40,6 +37,7 @@ header {
   padding: 25px 40px;
   position: relative;
   z-index: 1;
+  color: white;
 }
 
 .logo-haut {
@@ -97,11 +95,106 @@ main {
   cursor: pointer;
   margin: 0 15px;
 }
+.background {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-color: #fffbf3;
+  z-index: 1;
+  margin-top: 110px; /* espace sous le nuage */
+}
+
+.background p {
+  color: black;
+}
 
 .nuage {
   position: absolute;
   width: 1500px;
   bottom: -120px;
-  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1; /* derrière le contenu */
   pointer-events: none;
+}
+
+.about-us {
+  display: flex;
+  flex-wrap: wrap; /* pour mobile */
+  gap: 50px; /* espace entre titre et texte */
+  padding: 100px 50px; /* espace autour */
+  background-color: #fffbf3; /* couleur de fond similaire à ton image */
+  color: #a01abf; /* violet texte */
+  align-items: flex-start; /* aligne le texte avec le haut du titre */
+}
+
+.about-title {
+  font-family: 'Erica One', sans-serif;
+  font-size: 6vw;
+  font-weight: bolder;
+  line-height: 1.1;
+  flex: 1 1 250px;
+}
+
+.about-text {
+  font-family: 'Montserrat', sans-serif;
+  flex: 2 1 400px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* SECTION OUR WORK */
+.ourwork-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff4457;
+    padding: 100px 80px;
+    gap: 60px;
+}
+
+.ourwork-left h2 {
+    font-family: 'Erica One', sans-serif;
+    font-size: 7vw;
+    line-height: 0.9;
+    color: white;
+    margin: 0;
+}
+
+.ourwork-right {
+    display: flex;
+    flex-direction: row; /* côte à côte */
+    gap: 25px;
+}
+
+.work-card {
+    position: relative;
+    width: 350px;
+    height: 180px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.work-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-card .overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.work-card:hover img {
+    filter: brightness(70%);
 }
