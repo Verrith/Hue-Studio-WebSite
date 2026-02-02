@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  overflow-x: hidden; /* <-- empêche le scroll horizontal */
+  overflow-x: hidden !important; /* <-- empêche le scroll horizontal */
   overflow-y: auto;   /* <-- permet le scroll vertical */
   background: black;
 }
@@ -95,23 +95,20 @@ main {
   cursor: pointer;
   margin: 0 15px;
 }
+
 .background {
   position: relative;
   width: 100%;
   min-height: 500px;
   background-color: #fffbf3;
   z-index: 1;
-  margin-top: 110px; /* espace sous le nuage */
-}
-
-.background p {
-  color: black;
+  margin-top: 90px; /* espace sous le nuage */
 }
 
 .nuage {
   position: absolute;
   width: 1500px;
-  bottom: -120px;
+  bottom: -100px;
   left: 50%;
   transform: translateX(-50%);
   z-index: -1; /* derrière le contenu */
@@ -197,4 +194,187 @@ main {
 
 .work-card:hover img {
     filter: brightness(70%);
+}
+
+/* SECTION OUR TEAM */
+.ourteam-section {
+    background-color: #fffbf3;
+    padding: 100px 80px;
+}
+
+/* Titre seul sur sa ligne */
+.ourteam-left h2 {
+    font-family: 'Erica One', sans-serif;
+    font-size: 7vw;
+    line-height: 0.9;
+    color: #f40f5a;
+    margin: 0 0 60px 0; /* espace sous le titre */
+}
+
+/* CARROUSEL */
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    gap: 40px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 25px;
+    animation: scroll 15s linear infinite;
+}
+
+.carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+/* CARDS AVEC IMAGES */
+.card {
+    flex-shrink: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    display: flex;
+
+}
+
+.card img {
+    width: auto;
+    height: 400px;
+    object-fit: cover; /* image grande, propre, sans bord blanc */
+    display: block;
+}
+
+/* Animation fluide */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-102.5%);
+  }
+}
+
+
+/* ============================
+   📱 RESPONSIVE MOBILE
+   ============================ */
+@media (max-width: 768px) {
+
+  header {
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  .logo-haut {
+    height: 45px;
+  }
+
+  main {
+    margin-top: 40px;
+  }
+
+  .logo-centre {
+    width: 150px;
+  }
+
+  .tagline {
+    font-size: 1em;
+    padding: 10px 18px;
+  }
+
+  .arrow {
+    font-size: 1.3em;
+    margin: 0 10px;
+  }
+
+  /* Nuage plus petit */
+  .nuage {
+    width: 900px;
+    bottom: -92px;
+  }
+
+  /* ABOUT US */
+  .about-us {
+    padding: 60px 25px;
+    gap: 30px;
+  }
+
+  .about-title {
+    font-size: 14vw; /* énorme mais proportionné */
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* OUR WORK */
+  .ourwork-section {
+    flex-direction: column;
+    padding: 60px 30px;
+    gap: 40px;
+  }
+
+  .ourwork-left h2 {
+    font-size: 14vw;
+    text-align: center;
+  }
+
+  .ourwork-right {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .work-card {
+    width: 100%;
+    height: 200px;
+  }
+
+  /* OUR TEAM */
+  .ourteam-section {
+    padding: 60px 30px;
+  }
+
+  .ourteam-left h2 {
+    font-size: 14vw;
+    text-align: center;
+  }
+
+  .carousel-wrapper {
+    gap: 20px;
+  }
+
+  .card img {
+    height: 280px;
+  }
+
+  /* Animation plus lente pour mobile */
+  .carousel-track {
+    animation: scroll 25s linear infinite;
+  }
+  .ourwork-right {
+    flex-direction: column !important; /* force la colonne */
+    width: 100%;
+    gap: 25px;
+  }
+
+  .work-card {
+    width: 100% !important;  /* prend toute la largeur */
+    max-width: 100%;
+    height: 220px;           /* un peu plus haut pour mobile */
+  }
+
+  .work-card img {
+    height: 100%;
+    object-fit: cover;
+  }
+
 }
