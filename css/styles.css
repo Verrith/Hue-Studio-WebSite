@@ -14,7 +14,15 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, #ffcc00, #ff0066);
+  background: linear-gradient(
+    135deg,
+    #c83b6f 0%,     /* rose foncé */
+    #d24c8a 20%,    /* rose */
+    #e86b3a 40%,    /* orange */
+    #5bb6a6 65%,    /* turquoise */
+    #3aa0c8 85%,    /* bleu */
+    #6b4aa1 100%    /* violet */
+  );
   z-index: -2;
 }
 
