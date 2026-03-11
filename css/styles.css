@@ -320,13 +320,13 @@ main {
   align-items: center;
   gap: 350px;
   }
-  .page_principale { margin-top: -50px; }
+  .page_principale { margin-top: -30px; }
   main { margin-top: 200px; }
 }
 
 @media (max-width: 1324px) {
   header {
-    margin-top: 150px;
+    margin-top: 100px;
     flex-direction: row;
   align-items: center;
   gap: 250px;
@@ -334,7 +334,7 @@ main {
 }
 @media (max-width: 1150px) {
   header {
-    margin-top: 300px;
+    margin-top: 200px;
     flex-direction: row;
   align-items: center;
   gap: 250px;
@@ -355,6 +355,7 @@ main {
 }
 @media (max-width: 967px) {
   header {
+    margin-top: 300px;
     padding-top: 30px;
     flex-direction: row;
   align-items: center;
@@ -362,6 +363,7 @@ main {
   }
   .ourwork-right { flex-wrap: nowrap; }
   .work-card { flex: 1 1 30%; height: 200px; }
+  .page_principale { margin-top: 10px; }
 }
 @media (max-width: 790px) {
   header {
