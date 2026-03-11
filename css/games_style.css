@@ -185,6 +185,15 @@
 /* =========================================
    VERSION MOBILE (Tablettes et Téléphones)
    ========================================= */
+@media (max-width: 1424px) {
+  .visual-side {
+        flex: none;
+        width: 1000px;
+        height: auto;
+        background-size: cover;
+        background-position: center;
+    }
+}
 @media screen and (max-width: 1024px) {
     
     /* ... (Gardez toutes vos règles précédentes pour .game-strip, .visual-side, etc.) ... */
@@ -261,15 +270,15 @@
 @media (max-width: 768px) {
     .our-games-title {
         font-size: 12vw;
-        margin-top: -25px;
-        padding-top: 80px;
+        margin-top: 25px;
+        padding-top: 50px;
     }
 }
 
 @media (max-width: 500px) {
     .our-games-title {
         font-size: 12vw;
-        margin-top: -105px;
-        padding-top: 140px;
+        margin-top: -55px;
+        padding-top: 90px;
     }
 }

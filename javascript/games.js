@@ -1,13 +1,29 @@
-<script>
-document.addEventListener("scroll", () => {
-    const elements = document.querySelectorAll(".visual-side");
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".hiraeth .carousel-track");
+    const slides = Array.from(track.children);
+    const gap = 10; // espace entre images
+    let visibleCount = window.innerWidth > 1024 ? 4 : 2; // images visibles selon l'écran
+    let index = 0;
 
-    elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        const speed = 0.05; // parallax très léger
-        const offset = rect.top * speed;
+    // calcule largeur totale d'une image incluant gap
+    function slideWidth() {
+        return slides[0].getBoundingClientRect().width + gap;
+    }
 
-        el.style.transform = `translateY(${offset}px)`;
+    function moveCarousel() {
+        index++;
+        if (index > slides.length - visibleCount) {
+            index = 0; // reset quand toutes les images sont passées
+        }
+        track.style.transform = `translateX(-${slideWidth() * index}px)`;
+    }
+
+    // avancement toutes les 2 secondes
+    setInterval(moveCarousel, 2000);
+
+    // ajuster visibleCount si l'utilisateur redimensionne
+    window.addEventListener("resize", () => {
+        visibleCount = window.innerWidth > 1024 ? 4 : 2;
+        track.style.transform = `translateX(-${slideWidth() * index}px)`;
     });
 });
-</script>

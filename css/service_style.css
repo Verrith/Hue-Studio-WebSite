@@ -1,0 +1,173 @@
+.our-services-title {
+    font-family: 'Erica One', sans-serif;
+    font-size: 6vw;
+    font-weight: bolder;
+    line-height: 1.1;
+    background-color: #fffbf3;
+    color: #a01abf;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 70px;
+}
+
+.hue-cards-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:60px 20px;
+    font-family:'Inter',sans-serif;
+}
+
+.hue-card{
+    flex:1 1 320px;
+    max-width:380px;
+    min-height:420px;
+    border-radius:20px;
+    padding:60px 35px;
+    color:#ffffff;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    transition:transform 0.3s ease;
+}
+
+.hue-card:hover{
+    transform:translateY(-6px);
+}
+
+/* Logo */
+
+.hue-card img{
+    width:300px;
+    height:auto;
+    margin-bottom:20px;
+}
+
+.hue-card a {
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:600;
+    margin-top:70px;
+    border:2px solid #ffffff;
+    padding:10px 20px;
+    border-radius:30px;
+    transition:background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Titre */
+
+.hue-card h3{
+    font-size:22px;
+    font-weight:800;
+    text-transform:uppercase;
+    margin:20px 0 15px 0;
+    letter-spacing:1px;
+}
+
+/* Texte */
+
+.hue-card p{
+    font-size:15px;
+    line-height:1.6;
+    opacity:0.9;
+    margin:0;
+}
+
+/* Couleurs */
+
+.card-orange{
+    background:linear-gradient(135deg,#ff984d 0%,#ff6b00 100%);
+    z-index: 1;
+}
+
+.card-blue{
+    background:linear-gradient(135deg,#7674ff 0%,#4455ff 100%);
+    z-index: 1;
+}
+
+.card-purple{
+    background:linear-gradient(135deg,#e290ff 0%,#c552f5 100%);
+    z-index: 1;
+}
+
+.bottom-image{
+    width:100%;
+    position:relative;
+    bottom:0;
+    display:block;
+    opacity:0.3; /* transparence */
+    margin-top: -400px;
+    pointer-events:none; /* évite de bloquer les clics */
+    z-index: -1;
+}
+
+/* Responsive */
+
+/* ===================== */
+/* Responsive téléphone  */
+/* ===================== */
+
+@media (max-width:768px){
+
+    .our-services-title{
+        font-size: 12vw;
+        margin-top: 25px;
+        padding-top: 50px;
+    }
+
+    .hue-cards-container{
+        flex-direction:column;
+        align-items:center;
+        gap:25px;
+        padding:40px 15px;
+    }
+
+    .hue-card{
+        max-width:95%;
+        min-height:auto;
+        padding:40px 25px;
+    }
+
+    .hue-card img{
+        width:180px;
+        margin-bottom:15px;
+    }
+
+    .hue-card h3{
+        font-size:18px;
+        margin:15px 0 10px 0;
+    }
+
+    .hue-card p{
+        font-size:14px;
+        line-height:1.5;
+    }
+
+    .hue-card a{
+        margin-top:35px;
+        padding:8px 18px;
+        font-size:14px;
+    }
+
+    .bottom-image{
+        margin-top:-200px;
+        opacity:0.25;
+    }
+}
+
+@media (max-width: 500px) {
+    .bottom-image {
+        margin-top: -10px;
+        opacity: 0.2;
+    }
+    .our-services-title {
+        font-size: 12vw;
+        margin-top: -55px;
+        padding-top: 90px;
+    }
+}
