@@ -72,7 +72,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 70px;
+  padding-top: 70px; /* espace contrôlé */
   position: relative;
   z-index: 1;
 }
@@ -110,17 +110,17 @@ main {
   min-height: 500px;
   background-color: #fffbf3;
   z-index: 1;
-  margin-top: 90px; /* espace sous le nuage */
+  margin-top: 78px; /* espace sous le nuage */
   z-index: -1;
 }
 
 .nuage {
   position: absolute;
   width: 1500px;
-  bottom: -100px;
+  bottom: -80px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: -1; /* derrière le contenu */
+  z-index: -1;
   pointer-events: none;
 }
 
@@ -420,4 +420,12 @@ main {
 .about-title {
   padding-top: 90px;
 }
+}
+
+.Logo-retour {
+  transition: transform 0.3s ease;
+}
+
+.Logo-retour:hover {
+  transform: scale(1.1);
 }

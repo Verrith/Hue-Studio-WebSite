@@ -1,0 +1,275 @@
+.games-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: -10px;
+    overflow: visible; /* IMPORTANT : laisse dépasser les ombres */
+    position: relative; /* nécessaire pour que z-index des enfants fonctionne */
+}
+
+/* =========================================
+   CARD / GAME STRIP
+   ========================================= */
+.game-strip {
+    display: flex;
+    width: 100%;
+    min-height: 700px;
+    overflow: visible; /* pour que l'ombre dépasse */
+    position: relative;
+    flex-direction: row; /* par défaut : ligne */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1; /* par défaut */
+}
+
+/* Hover : zoom léger + ombre + z-index plus élevé pour dépasser les autres cards */
+.game-strip:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    z-index: 10; /* monte la card au-dessus des autres */
+}
+
+/* GESTION DE L'ORDRE SUR PC (Desktop) */
+/* Cas 1 : Crumbs et Hiraeth -> On veut Image GAUCHE / Texte DROITE */
+/* Dans le HTML : Crumbs/Hiraeth ont .visual-side en premier. C'est bon. */
+.crumbs, .hiraeth {
+    flex-direction: row; 
+}
+
+/* Cas 2 : Witch -> On veut Texte GAUCHE / Image DROITE */
+/* Dans le HTML : Witch a .info-side en premier. C'est bon. */
+.witch {
+    flex-direction: row;
+}
+
+/* =========================================
+   VISUAL SIDE (IMAGE DE FOND)
+   ========================================= */
+.visual-side {
+    flex: 1 1 60%;
+    position: relative;
+    background-size: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.hiraeth .visual-side {
+    background-size: 190%;
+}
+
+/* =========================================
+   INFO SIDE (BANDE TEXTE)
+   ========================================= */
+.info-side {
+    flex: 1 1 20%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    color: white;
+    z-index: 5;
+}
+
+.text-content {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   MINI-GALERIE / CARROUSEL
+   ========================================= */
+.mini-gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+}
+
+.mini-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.mini-gallery img {
+    height: 125px;
+    width: auto;
+    flex-shrink: 0;
+    object-fit: cover;
+    transition: none;
+}
+
+/* =========================================
+   LOGOS : gauche / droite
+   ========================================= */
+.logo-left {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    width: 300px;
+    max-width: 60%;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+    z-index: 10;
+}
+
+.logo-right {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 300px;
+    max-width: 60%;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+    z-index: 10;
+}
+
+/* =========================================
+   COULEURS PAR JEU
+   ========================================= */
+.crumbs .info-side {
+    background: linear-gradient(180deg, #df8409 0%, #aa4d22 100%);
+}
+
+.witch .info-side {
+    background: linear-gradient(180deg, #e70b90 0%, #a618e0 100%);
+}
+
+.hiraeth .info-side {
+    background: linear-gradient(180deg, #1459a6 0%, #014759 100%);
+}
+
+/* =========================================
+   TITRE OUR GAMES
+   ========================================= */
+.our-games-title {
+    font-family: 'Erica One', sans-serif;
+    font-size: 6vw;
+    font-weight: bolder;
+    line-height: 1.1;
+    background-color: #fffbf3;
+    color: #a01abf;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 70px;
+}
+
+/* =========================================
+   CARROUSEL HIRAETH (Desktop)
+   ========================================= */
+.hiraeth .mini-gallery {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.hiraeth .carousel-track {
+    display: flex;
+    gap: 10px;
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+
+/* =========================================
+   VERSION MOBILE (Tablettes et Téléphones)
+   ========================================= */
+@media screen and (max-width: 1024px) {
+    
+    /* ... (Gardez toutes vos règles précédentes pour .game-strip, .visual-side, etc.) ... */
+    .game-strip {
+        flex-direction: column; 
+        min-height: auto;
+    }
+    .crumbs, .hiraeth { flex-direction: column; }
+    .witch { flex-direction: column-reverse; }
+    
+    .visual-side {
+        flex: none;
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .info-side {
+        flex: none;
+        width: 100%;
+        min-width: auto;
+        padding: 30px 20px;
+        box-sizing: border-box;
+    }
+
+    .logo-left, .logo-right {
+        width: 200px;
+        max-width: 80%;
+        bottom: 20px;
+    }
+    .logo-left { left: 50%; transform: translateX(-50%); }
+    .logo-right { right: 50%; transform: translateX(50%); }
+
+    .our-games-title {
+        font-size: 12vw;
+        margin-top: -80px;
+        padding-top: 155px;
+    }
+
+    /* --- CORRECTION POUR DÉFILEMENT AUTO SUR MOBILE --- */
+
+    /* 1. Le conteneur doit masquer ce qui dépasse (comme sur PC) */
+    .hiraeth .mini-gallery {
+        display: block; /* Important pour contenir l'animation */
+        overflow: hidden; /* Cache les images qui sortent du cadre */
+        width: 100%;
+        position: relative;
+    }
+
+    /* 2. On réactive l'animation et on assure la largeur */
+    .hiraeth .carousel-track {
+        display: flex;
+        gap: 10px;
+        width: max-content; /* Indispensable pour que les images soient côte à côte */
+        
+        /* Réactivation de l'animation */
+        animation: scroll 40s linear infinite; 
+    }
+
+    /* 3. On s'assure que les images gardent leur taille */
+    .hiraeth .mini-gallery img {
+        height: 100px; /* Un peu plus petit sur mobile si nécessaire */
+        width: auto;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    /* Ajustement background spécifique */
+    .hiraeth .visual-side { background-size: 300%; }
+    .witch .visual-side { background-size: 170%; }
+}
+
+@media (max-width: 768px) {
+    .our-games-title {
+        font-size: 12vw;
+        margin-top: -25px;
+        padding-top: 80px;
+    }
+}
+
+@media (max-width: 500px) {
+    .our-games-title {
+        font-size: 12vw;
+        margin-top: -105px;
+        padding-top: 140px;
+    }
+}
