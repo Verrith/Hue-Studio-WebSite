@@ -101,7 +101,8 @@
     bottom:0;
     display:block;
     opacity:0.3; /* transparence */
-    margin-top: -400px;
+    margin-bottom: -100px;
+    margin-top: -500px;
     pointer-events:none; /* évite de bloquer les clics */
     z-index: -1;
 }
@@ -160,14 +161,24 @@
     }
 }
 
+@media (max-width: 900px) {
+    .our-services-title {
+        margin-top: -300px;
+        padding-top: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .our-services-title {
+        margin-top: -400px;
+        padding-top: 80px;
+        font-size: 12vw;
+        padding-bottom: 300px;
+    }
+}
 @media (max-width: 500px) {
     .bottom-image {
         margin-top: -10px;
         opacity: 0.2;
-    }
-    .our-services-title {
-        font-size: 12vw;
-        margin-top: -55px;
-        padding-top: 90px;
     }
 }

@@ -193,7 +193,14 @@
         background-size: cover;
         background-position: center;
     }
+
+}   
+@media (max-width: 1300px) {
+     .our-games-title {
+        margin-top: -150px;
+    }
 }
+
 @media screen and (max-width: 1024px) {
     
     /* ... (Gardez toutes vos règles précédentes pour .game-strip, .visual-side, etc.) ... */
@@ -227,13 +234,6 @@
     }
     .logo-left { left: 50%; transform: translateX(-50%); }
     .logo-right { right: 50%; transform: translateX(50%); }
-
-    .our-games-title {
-        font-size: 12vw;
-        margin-top: -80px;
-        padding-top: 155px;
-    }
-
     /* --- CORRECTION POUR DÉFILEMENT AUTO SUR MOBILE --- */
 
     /* 1. Le conteneur doit masquer ce qui dépasse (comme sur PC) */
@@ -266,19 +266,17 @@
     .hiraeth .visual-side { background-size: 300%; }
     .witch .visual-side { background-size: 170%; }
 }
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .our-games-title {
-        font-size: 12vw;
-        margin-top: 25px;
+        margin-top: -300px;
         padding-top: 50px;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .our-games-title {
+        margin-top: -400px;
+        padding-top: 80px;
         font-size: 12vw;
-        margin-top: -55px;
-        padding-top: 90px;
     }
 }
