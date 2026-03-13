@@ -103,7 +103,6 @@ header li:hover a {
 
 main.page_principale {
   position: absolute;
-  /* Descendu à 58% pour placer le logo plus bas dans le nuage */
   top: 58%; 
   left: 50%;
   transform: translate(-50%, -50%);
@@ -120,7 +119,7 @@ main.page_principale {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.5vw; /* Espace minimal entre logo et tagline */
+  margin-bottom: 0.5vw;
   pointer-events: auto;
   background: transparent;
   padding: 0;
@@ -173,33 +172,35 @@ main.page_principale {
   left: 0;
   z-index: 5;
   pointer-events: none;
-  line-height: 0; /* Élimine tout espace sous l'image */
+  line-height: 0;
   margin: 0;
   padding: 0;
 }
 
 /* ==============================
-   ABOUT US (SUPPRESSION DE L'ESPACE)
+   ABOUT US (CORRIGÉ : TITRE COMPACT)
    ============================== */
 
 .about-us {
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
-  /* Padding réduit en haut (80px) pour coller au nuage */
   padding: 80px 8% 120px 8%; 
   align-items: flex-start;
   background-color: #fffbf3;
   position: relative;
   z-index: 4;
-  margin-top: 0; /* Force la suppression de toute marge par défaut */
+  margin-top: 0;
 }
 
 .about-title {
   font-family: 'Erica One', sans-serif;
   font-size: 6vw;
-  line-height: 1.1;
+  line-height: 0.85; /* Valeur réduite pour coller les lignes "ABOUT" et "US" */
   color: #a01abf;
+  margin: 0;
+  font-weight: 1000;
+  letter-spacing: -1px; /* Léger resserrement horizontal optionnel */
 }
 
 .about-text {
@@ -227,6 +228,7 @@ main.page_principale {
   font-size: 6vw;
   color: white;
   margin: 0;
+  line-height: 0.9; /* Harmonisation avec le style ABOUT US */
 }
 
 .ourwork-right {
@@ -281,6 +283,7 @@ main.page_principale {
   font-size: 6vw;
   color: #f40f5a;
   margin-bottom: 60px;
+  line-height: 0.9; /* Harmonisation avec le style ABOUT US */
 }
 
 .carousel-wrapper {
@@ -385,19 +388,18 @@ main.page_principale {
    ============================== */
 @media (max-width: 1300px) {
   main.page_principale {
-  position: absolute;
-  /* Descendu à 58% pour placer le logo plus bas dans le nuage */
-  top: 50%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  z-index: 6;
-  width: 100%;
-  pointer-events: none;
-}
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 6;
+    width: 100%;
+    pointer-events: none;
+  }
   .nuage {
     margin-bottom: 150px;
     width: 100%;
@@ -406,29 +408,29 @@ main.page_principale {
   .about-us {
     flex-direction: column;
     text-align: center;
-    padding: 60px 5% 80px 5%; /* Padding haut réduit à 60px sur mobile */
+    padding: 60px 5% 80px 5%;
     gap: 40px;
     padding-top: 90px;
   }
-    .background {
+  .background {
     margin-top: -150px;
   }
 }
+
 @media (max-width: 900px) {
   main.page_principale {
-  position: absolute;
-  /* Descendu à 58% pour placer le logo plus bas dans le nuage */
-  top: 45%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  z-index: 6;
-  width: 100%;
-  pointer-events: none;
-}
+    position: absolute;
+    top: 45%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 6;
+    width: 100%;
+    pointer-events: none;
+  }
 
   .logo-haut {
     height: 45px;
@@ -472,11 +474,11 @@ main.page_principale {
   .about-us {
     flex-direction: column;
     text-align: center;
-    padding: 60px 5% 80px 5%; /* Padding haut réduit à 60px sur mobile */
+    padding: 60px 5% 80px 5%;
     gap: 40px;
     padding-top: 90px;
   }
-    .background {
+  .background {
     margin-top: -300px;
   }
 }
@@ -484,79 +486,73 @@ main.page_principale {
 /* ==============================
    MOBILE
    ============================== */
-
 @media (max-width: 600px) {
+  /* ... le reste du code mobile (header, nav, etc.) reste inchangé ... */
+  
   main.page_principale {
-  position: absolute;
-  /* Descendu à 58% pour placer le logo plus bas dans le nuage */
-  top: 35%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  z-index: 6;
-  width: 100%;
-  pointer-events: none;
-}
+    position: absolute;
+    top: 35%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 6;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  /* ... (header, nav, logo, tagline, nuage inchangés) ... */
   header {
     flex-direction: column;
     gap: 15px;
     top: 10px;
     padding: 0 5%;
   }
+  nav ul { gap: 12px; flex-wrap: wrap; justify-content: center; }
+  nav a { font-size: 0.9rem; padding: 5px 12px; }
+  .logo-centre { width: 35vw; min-width: 140px; max-width: none; }
+  .tagline { font-size: 3.5vw; padding: 3vw 5vw; border-radius: 25px; }
+  .nuage { margin-bottom: 400px; width: 100%; }
 
-  nav ul {
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav a {
-    font-size: 0.9rem;
-    padding: 5px 12px;
-  }
-
-  .logo-centre {
-    width: 35vw;
-    min-width: 140px;
-    max-width: none;
-  }
-
-  .tagline {
-    font-size: 3.5vw;
-    padding: 3vw 5vw;
-    border-radius: 25px;
-  }
-
-  .nuage {
-    margin-bottom: 400px;
-    width: 100%;
-  }
-
+  /* --- CORRECTION CENTRAGE ABOUT US --- */
   .about-us {
     flex-direction: column;
-    text-align: center;
-    padding: 60px 5% 80px 5%; /* Padding haut réduit à 60px sur mobile */
+    align-items: center;       /* Force le centrage du conteneur flex */
+    text-align: center;        /* Centre le texte à l'intérieur */
+    justify-content: center;   /* Centre verticalement si besoin */
+    padding: 60px 5% 80px 5%;
     gap: 40px;
     padding-top: 90px;
+    margin: 0 auto;            /* Garantit le centrage horizontal du bloc */
+    width: 100%;               /* S'assure qu'il prend toute la largeur disponible */
+    box-sizing: border-box;
   }
 
   .about-title {
     font-size: 12vw;
+    line-height: 0.85;
+    margin: 0 auto;            /* Centre le bloc titre lui-même */
+    display: block;            /* S'assure que margin auto fonctionne */
+    width: fit-content;        /* Le titre ne prend que la place nécessaire */
   }
 
   .about-text {
     font-size: 1rem;
     padding: 0 10px;
+    text-align: center;        /* Force le centrage du paragraphe */
+    margin: 0 auto;            /* Centre le bloc de texte */
+    max-width: 100%;           /* Évite les débordements */
   }
+  /* ------------------------------------ */
 
   .ourwork-left h2,
   .ourteam-left h2 {
     font-size: 12vw;
     text-align: center;
     margin-bottom: 40px;
+    line-height: 0.9;
   }
 
   .work-card {
