@@ -196,11 +196,11 @@ main.page_principale {
 .about-title {
   font-family: 'Erica One', sans-serif;
   font-size: 6vw;
-  line-height: 0.85; /* Valeur réduite pour coller les lignes "ABOUT" et "US" */
+  line-height: 0.85;
   color: #a01abf;
   margin: 0;
   font-weight: 1000;
-  letter-spacing: -1px; /* Léger resserrement horizontal optionnel */
+  letter-spacing: -1px;
 }
 
 .about-text {
@@ -229,7 +229,7 @@ main.page_principale {
   font-size: 6vw;
   color: white;
   margin: 0;
-  line-height: 0.9; /* Harmonisation avec le style ABOUT US */
+  line-height: 0.9;
 }
 
 .ourwork-right {
@@ -266,10 +266,18 @@ main.page_principale {
   text-align: center;
 }
 
-.work-card:hover img {
-  filter: brightness(70%);
+.work-card:hover {
+  transform: translateY(-15px);
 }
 
+.work-card:hover {
+  animation: floatCard 0.6s ease infinite alternate;
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
 /* ==============================
    OUR TEAM
    ============================== */
@@ -277,6 +285,7 @@ main.page_principale {
 .ourteam-section {
   padding: 120px 8%;
   background-color: #fffbf3;
+  overflow: hidden;
 }
 
 .ourteam-left h2 {
@@ -284,27 +293,53 @@ main.page_principale {
   font-size: 6vw;
   color: #f40f5a;
   margin-bottom: 60px;
-  line-height: 0.9; /* Harmonisation avec le style ABOUT US */
+  line-height: 0.9;
   font-weight: 1000;
 }
 
 .carousel-wrapper {
   width: 100%;
-  overflow: hidden;
-  display: flex;
-  gap: 40px;
+  overflow-x: scroll;
+  overflow-y: hidden;
   position: relative;
+  cursor: grab;
+  touch-action: none;
+  display: flex;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
 }
+
+.carousel-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
 
 .carousel-track {
-  display: flex;
+  display: inline-flex;
   gap: 25px;
-  animation: scroll 15s linear infinite;
   width: max-content;
+  will-change: transform;
+  animation: none;
 }
 
-.carousel-wrapper:hover .carousel-track {
+.carousel-wrapper:active {
+  cursor: grabbing;
+}
+
+.carousel-wrapper:hover .carousel-track,
+.carousel-wrapper:active .carousel-track {
   animation-play-state: paused;
+}
+
+@keyframes scrollLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 .card {
@@ -314,6 +349,8 @@ main.page_principale {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   background: white;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .card img {
@@ -321,11 +358,7 @@ main.page_principale {
   height: 400px;
   object-fit: cover;
   display: block;
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  pointer-events: none;
 }
 
 /* ==============================
@@ -431,7 +464,6 @@ main.page_principale {
   main.page_principale {
     top: 25%; 
   }
-    /* ======== OUR WORK CARDS ======== */
   .ourwork-right {
     display: flex;
     flex-wrap: wrap;
@@ -457,7 +489,6 @@ main.page_principale {
     top: 23%; 
   }
 
-  /* ======== OUR WORK CARDS ======== */
   .ourwork-right {
     display: flex;
     flex-wrap: wrap;
@@ -466,7 +497,6 @@ main.page_principale {
   }
 
   .ourwork-right .work-card:nth-child(3) {
-    /* Force la 3ème card à passer en dessous */
     flex-basis: 100%;
     max-width: 260px;
     margin: 0 auto;
@@ -608,7 +638,6 @@ main.page_principale {
    MOBILE
    ============================== */
 @media (max-width: 600px) {
-  /* ... le reste du code mobile (header, nav, etc.) reste inchangé ... */
   
   main.page_principale {
     position: absolute;
@@ -624,7 +653,6 @@ main.page_principale {
     pointer-events: none;
   }
 
-  /* ... (header, nav, logo, tagline, nuage inchangés) ... */
   header {
     flex-direction: column;
     gap: 15px;
@@ -637,36 +665,34 @@ main.page_principale {
   .tagline { font-size: 3.5vw; padding: 3vw 5vw; border-radius: 25px; }
   .nuage { margin-bottom: 400px; width: 100%; }
 
-  /* --- CORRECTION CENTRAGE ABOUT US --- */
   .about-us {
     flex-direction: column;
-    align-items: center;       /* Force le centrage du conteneur flex */
-    text-align: center;        /* Centre le texte à l'intérieur */
-    justify-content: center;   /* Centre verticalement si besoin */
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     padding: 60px 5% 80px 5%;
     gap: 40px;
     padding-top: 90px;
-    margin: 0 auto;            /* Garantit le centrage horizontal du bloc */
-    width: 100%;               /* S'assure qu'il prend toute la largeur disponible */
+    margin: 0 auto;
+    width: 100%;
     box-sizing: border-box;
   }
 
   .about-title {
     font-size: 12vw;
     line-height: 0.85;
-    margin: 0 auto;            /* Centre le bloc titre lui-même */
-    display: block;            /* S'assure que margin auto fonctionne */
-    width: fit-content;        /* Le titre ne prend que la place nécessaire */
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
   }
 
   .about-text {
     font-size: 1rem;
     padding: 0 10px;
-    text-align: center;        /* Force le centrage du paragraphe */
-    margin: 0 auto;            /* Centre le bloc de texte */
-    max-width: 100%;           /* Évite les débordements */
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
   }
-  /* ------------------------------------ */
 
   .ourwork-left h2,
   .ourteam-left h2 {

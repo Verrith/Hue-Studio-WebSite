@@ -3,8 +3,8 @@
     display: flex;
     flex-direction: column;
     margin-top: -10px;
-    overflow: visible; /* IMPORTANT : laisse dépasser les ombres */
-    position: relative; /* nécessaire pour que z-index des enfants fonctionne */
+    overflow: visible;
+    position: relative;
 }
 
 /* =========================================
@@ -14,29 +14,23 @@
     display: flex;
     width: 100%;
     min-height: 700px;
-    overflow: visible; /* pour que l'ombre dépasse */
+    overflow: visible;
     position: relative;
-    flex-direction: row; /* par défaut : ligne */
+    flex-direction: row;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1; /* par défaut */
+    z-index: 1;
 }
 
-/* Hover : zoom léger + ombre + z-index plus élevé pour dépasser les autres cards */
 .game-strip:hover {
     transform: scale(1.05);
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    z-index: 10; /* monte la card au-dessus des autres */
+    z-index: 10;
 }
 
-/* GESTION DE L'ORDRE SUR PC (Desktop) */
-/* Cas 1 : Crumbs et Hiraeth -> On veut Image GAUCHE / Texte DROITE */
-/* Dans le HTML : Crumbs/Hiraeth ont .visual-side en premier. C'est bon. */
 .crumbs, .hiraeth {
     flex-direction: row; 
 }
 
-/* Cas 2 : Witch -> On veut Texte GAUCHE / Image DROITE */
-/* Dans le HTML : Witch a .info-side en premier. C'est bon. */
 .witch {
     flex-direction: row;
 }
@@ -277,7 +271,6 @@
 
 @media screen and (max-width: 1024px) {
     
-    /* ... (Gardez toutes vos règles précédentes pour .game-strip, .visual-side, etc.) ... */
     .game-strip {
         flex-direction: column; 
         min-height: auto;
@@ -308,35 +301,28 @@
     }
     .logo-left { left: 50%; transform: translateX(-50%); }
     .logo-right { right: 50%; transform: translateX(50%); }
-    /* --- CORRECTION POUR DÉFILEMENT AUTO SUR MOBILE --- */
-
-    /* 1. Le conteneur doit masquer ce qui dépasse (comme sur PC) */
     .hiraeth .mini-gallery {
-        display: block; /* Important pour contenir l'animation */
-        overflow: hidden; /* Cache les images qui sortent du cadre */
+        display: block;
+        overflow: hidden;
         width: 100%;
         position: relative;
     }
 
-    /* 2. On réactive l'animation et on assure la largeur */
     .hiraeth .carousel-track {
         display: flex;
         gap: 10px;
-        width: max-content; /* Indispensable pour que les images soient côte à côte */
+        width: max-content;
         
-        /* Réactivation de l'animation */
         animation: scroll 40s linear infinite; 
     }
 
-    /* 3. On s'assure que les images gardent leur taille */
     .hiraeth .mini-gallery img {
-        height: 100px; /* Un peu plus petit sur mobile si nécessaire */
+        height: 100px;
         width: auto;
         flex-shrink: 0;
         object-fit: cover;
     }
 
-    /* Ajustement background spécifique */
     .hiraeth .visual-side { background-size: 300%; }
     .witch .visual-side { background-size: 170%; }
 }
