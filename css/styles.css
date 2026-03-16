@@ -743,11 +743,12 @@ main.page_principale {
 }
 
 @media only screen and (max-device-width: 431px) and (min-device-width: 429px) and (max-device-height: 933px) and (min-device-height: 931px) {
-  .nuage { margin-bottom: 570px; width: 100%; }
+  .nuage { margin-bottom: 470px; width: 100%; }
   .background {
-    margin-top: -570px;
+    margin-top: -470px;
   }
 }
+
 
 @media only screen and (max-device-width: 415px) and (min-device-width: 413px) and (max-device-height: 897px) and (min-device-height: 895px) {
   .nuage { margin-bottom: 550px; width: 100%; }
@@ -798,4 +799,11 @@ main.page_principale {
     pointer-events: none;
   }
 
+}
+
+@media only screen and (max-device-width: 431px) and (min-device-width: 389px) and (max-device-height: 933px) and (min-device-height: 843px) {
+  .nuage { margin-bottom: 570px; width: 100%; }
+  .background {
+    margin-top: -570px;
+  }
 }
