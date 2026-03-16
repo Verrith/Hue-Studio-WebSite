@@ -750,9 +750,9 @@ main.page_principale {
 }
 
 @media only screen and (max-device-width: 431px) and (min-device-width: 429px) and (max-device-height: 931px) and (min-device-height: 920px) {
-  .nuage { margin-bottom: 270px; width: 100%; }
+  .nuage { margin-bottom: 250px; width: 100%; }
   .background {
-    margin-top: -270px;
+    margin-top: -250px;
   }
 }
 
