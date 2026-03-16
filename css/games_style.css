@@ -195,11 +195,13 @@
     }
 
 }   
+
 @media (max-width: 1300px) {
-     .our-games-title {
+    .our-games-title {
         margin-top: -150px;
     }
 }
+
 
 @media screen and (max-width: 1024px) {
     
@@ -273,10 +275,58 @@
     }
 }
 
+
 @media (max-width: 600px) {
     .our-games-title {
         margin-top: -400px;
         padding-top: 80px;
         font-size: 12vw;
     }
+}
+
+
+
+@media (max-width: 541px) {
+  .our-games-title {
+    margin-top: -400px;
+  }
+}
+
+
+@media (max-width: 431px) {
+  .our-games-title {
+    margin-top: -550px;
+  }
+}
+@media (max-width: 391px) {
+  .nuage { margin-bottom: 510px; width: 100%; }
+  .background {
+    margin-top: -510px;
+  }
+  .our-games-title {
+    margin-top: -510px;
+  }
+}
+@media (max-width: 390px) {
+  .nuage { margin-bottom: 400px; width: 100%; }
+  .background {
+    margin-top: -400px;
+  }
+  .our-games-title {
+    margin-top: -400px;
+  }
+}
+@media (max-width: 361px) {
+  .nuage { margin-bottom: 450px; width: 100%; }
+  .background {
+    margin-top: -450px;
+  }
+  .our-games-title {
+    margin-top: -450px;
+  }
+}
+@media (max-width: 345px) {
+.our-games-title {
+    margin-top: -600px;
+  }
 }

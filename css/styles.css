@@ -221,6 +221,7 @@ main.page_principale {
   background: #ff4457;
   padding: 120px 8%;
   gap: 60px;
+  font-weight: 1000;
 }
 
 .ourwork-left h2 {
@@ -284,6 +285,7 @@ main.page_principale {
   color: #f40f5a;
   margin-bottom: 60px;
   line-height: 0.9; /* Harmonisation avec le style ABOUT US */
+  font-weight: 1000;
 }
 
 .carousel-wrapper {
@@ -386,7 +388,7 @@ main.page_principale {
 /* ==============================
    TABLET
    ============================== */
-@media (max-width: 1300px) {
+@media only screen and (max-device-width: 1281px) and (min-device-width: 1279px) and (max-device-height: 801px) and (min-device-height: 799px) {
   main.page_principale {
     position: absolute;
     top: 50%; 
@@ -416,23 +418,59 @@ main.page_principale {
     margin-top: -150px;
   }
 }
-@media (max-width: 1025px) {
-  .nuage { margin-bottom: 830px; width: 100%; }
+@media only screen and (max-device-width: 1025px) and (min-device-width: 1023px) and (max-device-height: 601px) and (min-device-height: 599px) {
+  main.page_principale {
+    top: 70%; 
+  }
+}
+@media only screen and (max-device-width: 1025px) and (min-device-width: 1023px) and (max-device-height: 1367px) and (min-device-height: 1365px) {
+  .nuage { margin-bottom: 850px; width: 100%; }
   .background {
-    margin-top: -831px;
+    margin-top: -851px;
   }
   main.page_principale {
-    position: absolute;
-    top: 27%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 25%; 
+  }
+    /* ======== OUR WORK CARDS ======== */
+  .ourwork-right {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    z-index: 6;
-    width: 100%;
-    pointer-events: none;
+    flex-wrap: wrap;       /* Permet de passer à la ligne suivante si nécessaire */
+    justify-content: center; /* Centre les cards */
+    gap: 25px;             /* Garde l'espacement actuel */
+  }
+
+  .ourwork-right .work-card:nth-child(3) {
+    /* Force la 3ème card à passer en dessous */
+    flex-basis: 100%;      /* Elle prend toute la largeur disponible */
+    max-width: 260px;      /* Garde sa largeur originale */
+    margin: 0 auto;        /* Centre la card */
+  }
+}
+@media only screen and (max-device-width: 913px) and (min-device-width: 911px) and (max-device-height: 1369px) and (min-device-height: 1367px) {
+  .nuage { 
+    margin-bottom: 900px; 
+    width: 100%; 
+  }
+  .background {
+    margin-top: -901px;
+  }
+  main.page_principale {
+    top: 23%; 
+  }
+
+  /* ======== OUR WORK CARDS ======== */
+  .ourwork-right {
+    display: flex;
+    flex-wrap: wrap;       /* Permet de passer à la ligne suivante si nécessaire */
+    justify-content: center; /* Centre les cards */
+    gap: 25px;             /* Garde l'espacement actuel */
+  }
+
+  .ourwork-right .work-card:nth-child(3) {
+    /* Force la 3ème card à passer en dessous */
+    flex-basis: 100%;      /* Elle prend toute la largeur disponible */
+    max-width: 260px;      /* Garde sa largeur originale */
+    margin: 0 auto;        /* Centre la card */
   }
 }
 @media (max-width: 900px) {
@@ -500,7 +538,7 @@ main.page_principale {
     margin-top: -300px;
   }
 }
-@media (max-width: 854px) {
+@media only screen and (max-device-width: 854px) and (min-device-width: 852px) and (max-device-height: 1281px) and (min-device-height: 1279px) {
   .nuage { margin-bottom: 860px; width: 100%; }
   .background {
     margin-top: -860px;
@@ -519,7 +557,7 @@ main.page_principale {
     pointer-events: none;
   }
 }
-@media (max-width: 821px) {
+@media only screen and (max-device-width: 821px) and (min-device-width: 819px) and (max-device-height: 1181px) and (min-device-height: 1179px) {
   .nuage { margin-bottom: 750px; width: 100%; }
   .background {
     margin-top: -750px;
@@ -538,7 +576,7 @@ main.page_principale {
     pointer-events: none;
   }
 }
-@media (max-width: 769px) {
+@media only screen and (max-device-width: 769px) and (min-device-width: 767px) and (max-device-height: 1025px) and (min-device-height: 1023px) {
   .nuage { margin-bottom: 580px; width: 100%; }
   .background {
     margin-top: -580px;
@@ -663,45 +701,51 @@ main.page_principale {
 
   
 }
-@media (max-width: 541px) {
+@media only screen and (max-device-width: 541px) and (min-device-width: 539px) and (max-device-height: 721px) and (min-device-height: 719px) {
   .nuage { margin-bottom: 400px; width: 100%; }
   .background {
     margin-top: -400px;
   }
 }
 
+@media only screen and (max-device-width: 431px) and (min-device-width: 429px) and (max-device-height: 933px) and (min-device-height: 931px) {
+  .nuage { margin-bottom: 570px; width: 100%; }
+  .background {
+    margin-top: -570px;
+  }
+}
 
-@media (max-width: 431px) {
+@media only screen and (max-device-width: 415px) and (min-device-width: 413px) and (max-device-height: 897px) and (min-device-height: 895px) {
   .nuage { margin-bottom: 550px; width: 100%; }
   .background {
     margin-top: -550px;
   }
 }
-@media (max-width: 420px) {
+
+@media only screen and (max-device-width: 413px)and (min-device-width: 411px) and (max-device-height: 916px) and (min-device-height: 913px){
   .nuage { margin-bottom: 550px; width: 100%; }
   .background {
     margin-top: -550px;
   }
 }
-@media (max-width: 391px) {
+@media only screen and (max-device-width: 391px) and (min-device-width: 389px) and (max-device-height: 845px) and (min-device-height: 843px) {
   .nuage { margin-bottom: 510px; width: 100%; }
   .background {
     margin-top: -510px;
   }
 }
-@media (max-width: 390px) {
-  .nuage { margin-bottom: 400px; width: 100%; }
+@media only screen and (max-device-width: 376px) and (min-device-width: 374px) and (max-device-height: 668px) and (min-device-height: 666px) {
   .background {
     margin-top: -400px;
   }
 }
-@media (max-width: 361px) {
+@media only screen and (max-device-width: 361px) and (min-device-width: 359px) and (max-device-height: 741px) and (min-device-height: 739px) {
   .nuage { margin-bottom: 450px; width: 100%; }
   .background {
     margin-top: -450px;
   }
 }
-@media (max-width: 345px) {
+@media only screen and (max-device-width: 345px) and (min-device-width: 343px) and (max-device-height: 883px) and (min-device-height: 881px) {
   .nuage { margin-bottom: 600px; width: 100%; }
   .background {
     margin-top: -600px;
