@@ -743,12 +743,16 @@ main.page_principale {
 }
 
 @media only screen and (max-device-width: 431px) and (min-device-width: 429px) and (max-device-height: 933px) and (min-device-height: 931px) {
-  .nuage { margin-bottom: 520px; width: 100%; }
+  .nuage { margin-bottom: 570px; width: 100%; }
   .background {
-    margin-top: -520px;
+    margin-top: -570px;
   }
-  main.page_principale {
-    top: 40%; 
+}
+
+@media only screen and (max-device-width: 431px) and (min-device-width: 429px) and (max-device-height: 931px) and (min-device-height: 920px) {
+  .nuage { margin-bottom: 270px; width: 100%; }
+  .background {
+    margin-top: -270px;
   }
 }
 
