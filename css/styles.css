@@ -434,16 +434,15 @@ main.page_principale {
     /* ======== OUR WORK CARDS ======== */
   .ourwork-right {
     display: flex;
-    flex-wrap: wrap;       /* Permet de passer à la ligne suivante si nécessaire */
-    justify-content: center; /* Centre les cards */
-    gap: 25px;             /* Garde l'espacement actuel */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
   }
 
   .ourwork-right .work-card:nth-child(3) {
-    /* Force la 3ème card à passer en dessous */
-    flex-basis: 100%;      /* Elle prend toute la largeur disponible */
-    max-width: 260px;      /* Garde sa largeur originale */
-    margin: 0 auto;        /* Centre la card */
+    flex-basis: 100%;
+    max-width: 260px;
+    margin: 0 auto;
   }
 }
 @media only screen and (max-device-width: 913px) and (min-device-width: 911px) and (max-device-height: 1369px) and (min-device-height: 1367px) {
@@ -461,16 +460,25 @@ main.page_principale {
   /* ======== OUR WORK CARDS ======== */
   .ourwork-right {
     display: flex;
-    flex-wrap: wrap;       /* Permet de passer à la ligne suivante si nécessaire */
-    justify-content: center; /* Centre les cards */
-    gap: 25px;             /* Garde l'espacement actuel */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
   }
 
   .ourwork-right .work-card:nth-child(3) {
     /* Force la 3ème card à passer en dessous */
-    flex-basis: 100%;      /* Elle prend toute la largeur disponible */
-    max-width: 260px;      /* Garde sa largeur originale */
-    margin: 0 auto;        /* Centre la card */
+    flex-basis: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1300px) {
+  .nuage { 
+    margin-bottom: 150px; 
+    width: 100%; 
+  }
+  .background {
+    margin-top: -153px; 
   }
 }
 @media (max-width: 900px) {
