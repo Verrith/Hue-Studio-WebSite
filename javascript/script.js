@@ -3,11 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const track = document.querySelector(".carousel-track");
 
     const cards = [...track.children];
-    cards.forEach(card => {
-        const clone = card.cloneNode(true);
-        clone.classList.add("clone");
-        track.appendChild(clone);
-    });
+    const MULTIPLIER = 3;
+
+    for (let i = 1; i < MULTIPLIER; i++) {
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.classList.add("clone");
+            track.appendChild(clone);
+        });
+    }
 
     let isDown = false;
     let startX;
@@ -41,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
         loopFix();
     });
 
-    /* DRAG TOUCH */
     wrapper.addEventListener("touchstart", (e) => {
         const t = e.touches[0];
         isDown = true;
@@ -64,12 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function loopFix() {
-        const half = track.scrollWidth / 2;
-
-        if (wrapper.scrollLeft >= half) {
-            requestAnimationFrame(() => {
-                wrapper.scrollLeft -= half;
-            });
+        const segment = track.scrollWidth / MULTIPLIER;
+        if (wrapper.scrollLeft >= segment) {
+            wrapper.scrollLeft -= segment;
         }
     }
 
@@ -85,5 +85,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animate();
 
-    wrapper.scrollLeft = track.scrollWidth / 4;
+    wrapper.scrollLeft = 0;
 });
