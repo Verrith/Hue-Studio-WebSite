@@ -1,13 +1,12 @@
 .our-services-title {
     font-family: 'Erica One', sans-serif;
-    font-size: 6vw;
-    font-weight: bolder;
-    line-height: 1.1;
-    background-color: #fffbf3;
-    color: #a01abf;
+  font-size: 9vw;
+  line-height: 0.85;
+  color: #a01abf;
+  margin: 0;
+  font-weight: 1000;
+  letter-spacing: -1px;
     text-align: center;
-    padding: 20px 0;
-    margin-top: -10px;
 }
 
 .our-services-title-style {
