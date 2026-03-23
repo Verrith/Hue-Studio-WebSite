@@ -18,7 +18,7 @@ const translations = {
         services: "NOS SERVICES",
         newsletter: "INFOLETTRE",
         "contact-title": "Contactez-nous",
-        ourgames: "NOS JEUX<br><br>",
+        ourgames: "NOS JEUX",
         //endroit a modifier pour la traduction française pour les jeu
         "crumbs-text": "Laissez les bon temps rouler! C'est moi, Remy Lebeau! Gambit ne plie jamais! Vous avez eu une mauvaise main, Logan. Je suis désolé.",
         "witch-text": "Laissez les bon temps rouler! C'est moi, Remy Lebeau! Gambit ne plie jamais! Vous avez eu une mauvaise main, Logan. Je suis désolé.",
@@ -52,7 +52,7 @@ const translations = {
         services: "OUR SERVICES",
         newsletter: "NEWSLETTER",
         "contact-title": "Contact us",
-        ourgames: "Our Games<br><br>",
+        ourgames: "Our Games",
         //endroit a modifier pour la traduction anglaise pour les jeu
         "crumbs-text": "Laissez les bon temps rouler! C'est moi, Remy Lebeau! Gambit never folds!!! You got dealt a bad hand, Logan. Je suis désolé.",
         "witch-text": "Laissez les bon temps rouler! C'est moi, Remy Lebeau! Gambit never folds!!! You got dealt a bad hand, Logan. Je suis désolé.",

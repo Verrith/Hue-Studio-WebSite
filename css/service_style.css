@@ -10,6 +10,14 @@
     margin-top: -10px;
 }
 
+.our-services-title-style {
+  align-items: flex-start;
+  background-color: #fffbf3;
+  position: relative;
+  z-index: 4;
+  margin-top: 0;
+}
+
 .hue-cards-container{
     display:flex;
     flex-wrap:wrap;

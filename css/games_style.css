@@ -18,7 +18,7 @@
     position: relative;
     flex-direction: row;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1;
+    z-index: 100;
 }
 
 .game-strip:hover {
@@ -147,11 +147,16 @@
     font-size: 6vw;
     font-weight: bolder;
     line-height: 1.1;
-    background-color: #fffbf3;
     color: #a01abf;
     text-align: center;
-    padding: 20px 0;
-    margin-top: -10px;
+}
+.games-title-style {
+  align-items: flex-start;
+  background-color: #fffbf3;
+  position: relative;
+  z-index: 4;
+  margin-top: 0;
+  padding-bottom: 50px;
 }
 
 /* =========================================

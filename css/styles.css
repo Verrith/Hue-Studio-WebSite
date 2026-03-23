@@ -1,7 +1,10 @@
 /* ==============================
    RESET & BASE
    ============================== */
-
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 * {
   box-sizing: border-box;
 }
@@ -9,8 +12,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  overflow-x: hidden;
   background-color: #fffbf3;
+  position: relative;
 }
 
 /* ==============================
@@ -25,12 +28,12 @@ body {
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  z-index: -2;
+  z-index: 0;
 }
 
 .background {
   background-color: #fffbf3;
-  margin-top: -10px;
+  margin-top: -7px;
 }
 
 .fond-svg {
@@ -157,6 +160,7 @@ main.page_principale {
   margin: 0;
   filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
   transition: transform 0.25s ease;
+  z-index: 10;
 }
 
 .logo-centre:hover {
@@ -174,7 +178,6 @@ main.page_principale {
   font-weight: bold;
   color: white;
   font-family: 'Fredoka One', cursive, sans-serif;
-  z-index: 7;
   pointer-events: auto;
   white-space: nowrap;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -195,7 +198,6 @@ main.page_principale {
   transform: translateX(-50%);
   z-index: 5;
   pointer-events: none;
-  margin: 0;
   padding: 0;
   line-height: 0;
 }
@@ -429,10 +431,18 @@ main.page_principale {
 .footer-right img:hover {
   transform: scale(1.2);
 }
-@media (max-width: 1200px) {
+@media (max-width: 1215px) {
+  .logo-centre {
+    margin-top: 100px;
+  }
   .logo-centre {
     width: 30vw;
-    margin-top: 210px;
+  }
+}
+@media (max-width: 1150px) {
+  .logo-centre {
+    width: 30vw;
+    margin-top: 200px;
   }
   .nuage {
     width: 1200px;
@@ -441,6 +451,7 @@ main.page_principale {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: -17px;
   }
 }
 /* ==============================
