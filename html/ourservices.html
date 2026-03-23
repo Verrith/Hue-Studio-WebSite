@@ -10,77 +10,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="../images/cropped-STUDIOHUE_ICON-32x32.png">
+    <script src="../javascript/translate.js"></script>
 </head>
 
 <body>
-<!-- FOND SVG EN IMAGE -->
+<header>
+    <a href=""></a>
+    <button id="translate-btn" class="translate-btn">FR</button>
+</header>
+
 <div class="background-color" id="HOME">
     <img src="../images/SVG_Header-2.svg" alt="Fond décoratif" class="fond-svg" />
-    <!-- Les autocollants si vous les avez -->
-    <!-- <img src="images/Stickers_Header.png" alt="Stickers" class="fond-stickers" /> -->
 </div>
 
-
-<!-- CONTENU PRINCIPAL (Centré verticalement) -->
 <main class="page_principale">
-    <!-- Le fond blanc en forme de nuage -->
     <div class="hero-background-cloud">
         <a href="../index.html"><img src="../images/Logo_StudioHue_transparent.png" class="logo-centre" alt="Studio Hue Logo"></a>
     </div>
-    <!-- La tagline en dessous -->
-    <div class="tagline">Games For You Too</div>
+    <div class="tagline" data-translate="tagline">Games For You Too</div>
 </main>
 
-<!-- Le grand nuage de séparation (en bas de section) -->
 <img src="../images/cloud.png" class="nuage" alt="Séparation nuage">
 
+<div class="our-services-title" data-translate="ourservices">Our Services<br><br></div>
 
-    <div class="our-services-title">Our Services<br><br></div>
+<section class="fond_card">
+<div class="hue-cards-container">
 
-    <section class="fond_card">
-    <div class="hue-cards-container">
+<div class="hue-card card-orange">
+    <img src="../images/STUDIOHUE_LOGO-PRINCIPAL_RGB_Inverse_NORMAL-STATE.png" alt="Studio Hue Logo">
+    <h3 data-translate="service1-title">3D Animation Development</h3>
+    <p data-translate="service1-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit facilisis elit, at eleifend tellus sagittis sed. Pellentesque aliquet lacus mauris.</p>
+    <a href="#" data-translate="service1-link">Book a consultation</a>
+</div>
 
-    <!-- CARTE 1 : ORANGE -->
-    <div class="hue-card card-orange">
-        <img src="../images/STUDIOHUE_LOGO-PRINCIPAL_RGB_Inverse_NORMAL-STATE.png" alt="Studio Hue Logo">
-        <h3>3D Animation Development</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit facilisis elit, at eleifend tellus sagittis sed. Pellentesque aliquet lacus mauris.</p>
-        <a href="">Book a consultation</a>
-    </div>
+<div class="hue-card card-blue">
+    <img src="../images/STUDIOHUE_LOGO-PRINCIPAL_RGB_Inverse_NORMAL-STATE.png" alt="Studio Hue Logo">
+    <h3 data-translate="service2-title">Game Development</h3>
+    <p data-translate="service2-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit facilisis elit, at eleifend tellus sagittis sed. Pellentesque aliquet lacus mauris.</p>
+    <a href="#" data-translate="service2-link">Book a consultation</a>
+</div>
 
-    <!-- CARTE 2 : BLEU -->
-    <div class="hue-card card-blue">
-        <img src="../images/STUDIOHUE_LOGO-PRINCIPAL_RGB_Inverse_NORMAL-STATE.png" alt="Studio Hue Logo">
-        <h3>Game Development</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit facilisis elit, at eleifend tellus sagittis sed. Pellentesque aliquet lacus mauris.</p>
-        <a href="">Book a consultation</a>
-    </div>
+<div class="hue-card card-purple">
+    <img src="../images/STUDIOHUE_LOGO-PRINCIPAL_RGB_Inverse_NORMAL-STATE.png" alt="Studio Hue Logo">
+    <h3 data-translate="service3-title">3D Animation Development</h3>
+    <p data-translate="service3-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit facilisis elit, at eleifend tellus sagittis sed. Pellentesque aliquet lacus mauris.</p>
+    <a href="#" data-translate="service3-link">Book a consultation</a>
+</div>
 
-    <!-- CARTE 3 : VIOLET -->
-    <div class="hue-card card-purple">
-        <img src="../images/STUDIOHUE_LOGO-PRINCIPAL_RGB_Inverse_NORMAL-STATE.png" alt="Studio Hue Logo">
-        <h3>3D Animation Development</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit facilisis elit, at eleifend tellus sagittis sed. Pellentesque aliquet lacus mauris.</p>
-        <a href="">Book a consultation</a>
-    </div>
-    </div>
+</div>
 </section>
+
 <img src="../images/Servicesbackground-scaled.png" alt="Décor bas" class="bottom-image">
 
 <footer class="footer">
     <div class="footer-container">
-
         <div class="footer-left">
-            <h3>Contact us</h3>
+            <h3 data-translate="contact-title">Contact us</h3>
             <p><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@huestudio.ca" style="color: white; text-decoration: none;">contact@huestudio.ca</a></p>
         </div>
-
         <div class="footer-right">
             <img src="../images/Logo_Instagram.png" alt="Instagram" />
             <img src="../images/Logo_Linkedin.png" alt="LinkedIn" />
             <img src="../images/Logo_Bsky.png" alt="Bluesky" />
         </div>
-
     </div>
 </footer>
-</body></html>
+</body>
+</html>

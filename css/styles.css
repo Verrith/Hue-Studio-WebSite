@@ -28,6 +28,11 @@ body {
   z-index: -2;
 }
 
+.background {
+  background-color: #fffbf3;
+  margin-top: -10px;
+}
+
 .fond-svg {
   position: absolute;
   top: 0;
@@ -97,13 +102,31 @@ header li:hover a {
   color: #a01abf;
 }
 
+.translate-btn {
+  background: white;
+  color: #a01abf;
+  border: 2px solid white;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.translate-btn:hover {
+  background: #a01abf;
+  color: white;
+}
+
 /* ==============================
-   HERO CONTENT (POSITION AJUSTÉE)
+   HERO CONTENT
    ============================== */
 
 main.page_principale {
   position: absolute;
-  top: 58%; 
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -158,7 +181,7 @@ main.page_principale {
 }
 
 /* ==============================
-   CLOUD SEPARATOR (CONNEXION PARFAITE)
+   CLOUD SEPARATOR
    ============================== */
 
 .nuage {
@@ -166,26 +189,26 @@ main.page_principale {
   width: 100%;
   max-width: 100%;
   height: auto;
-  
   position: absolute;
-  bottom: -1px;
-  left: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 5;
   pointer-events: none;
-  line-height: 0;
   margin: 0;
   padding: 0;
+  line-height: 0;
 }
 
 /* ==============================
-   ABOUT US (CORRIGÉ : TITRE COMPACT)
+   ABOUT US
    ============================== */
 
 .about-us {
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
-  padding: 80px 8% 120px 8%; 
+  padding: 80px 8% 120px 8%;
   align-items: flex-start;
   background-color: #fffbf3;
   position: relative;
@@ -237,10 +260,12 @@ main.page_principale {
   gap: 25px;
 }
 
+/* 🔥 WORK-CARD RESPONSIVE */
 .work-card {
   position: relative;
-  width: 260px;
-  height: 220px;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 3;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
@@ -268,9 +293,6 @@ main.page_principale {
 
 .work-card:hover {
   transform: translateY(-15px);
-}
-
-.work-card:hover {
   animation: floatCard 0.6s ease infinite alternate;
 }
 
@@ -278,6 +300,7 @@ main.page_principale {
   0% { transform: translateY(0); }
   100% { transform: translateY(-15px); }
 }
+
 /* ==============================
    OUR TEAM
    ============================== */
@@ -308,13 +331,11 @@ main.page_principale {
   scroll-behavior: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-
 }
 
 .carousel-wrapper::-webkit-scrollbar {
   display: none;
 }
-
 
 .carousel-track {
   display: inline-flex;
@@ -331,15 +352,6 @@ main.page_principale {
 .carousel-wrapper:hover .carousel-track,
 .carousel-wrapper:active .carousel-track {
   animation-play-state: paused;
-}
-
-@keyframes scrollLoop {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
 }
 
 .card {
@@ -417,393 +429,172 @@ main.page_principale {
 .footer-right img:hover {
   transform: scale(1.2);
 }
-
-/* ==============================
-   TABLET
-   ============================== */
-@media only screen and (max-device-width: 1281px) and (min-device-width: 1279px) and (max-device-height: 801px) and (min-device-height: 799px) {
-  main.page_principale {
-    position: absolute;
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    z-index: 6;
-    width: 100%;
-    pointer-events: none;
+@media (max-width: 1200px) {
+  .logo-centre {
+    width: 30vw;
+    margin-top: 210px;
   }
   .nuage {
-    margin-bottom: 150px;
-    width: 100%;
+    width: 1200px;
+    max-width: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
+}
+/* ==============================
+   RESPONSIVE MOBILE
+   ============================== */
 
-  .about-us {
-    flex-direction: column;
-    text-align: center;
-    padding: 60px 5% 80px 5%;
-    gap: 40px;
-    padding-top: 90px;
-  }
-  .background {
-    margin-top: -150px;
-  }
-}
-@media only screen and (max-device-width: 1025px) and (min-device-width: 1023px) and (max-device-height: 601px) and (min-device-height: 599px) {
-  main.page_principale {
-    top: 70%; 
-  }
-}
-@media only screen and (max-device-width: 1025px) and (min-device-width: 1023px) and (max-device-height: 1367px) and (min-device-height: 1365px) {
-  .nuage { margin-bottom: 850px; width: 100%; }
-  .background {
-    margin-top: -851px;
-  }
-  main.page_principale {
-    top: 25%; 
-  }
-  .ourwork-right {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-  }
-
-  .ourwork-right .work-card:nth-child(3) {
-    flex-basis: 100%;
-    max-width: 260px;
-    margin: 0 auto;
-  }
-}
-@media only screen and (max-device-width: 913px) and (min-device-width: 911px) and (max-device-height: 1369px) and (min-device-height: 1367px) {
-  .nuage { 
-    margin-bottom: 900px; 
-    width: 100%; 
-  }
-  .background {
-    margin-top: -901px;
-  }
-  main.page_principale {
-    top: 23%; 
-  }
-
-  .ourwork-right {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-  }
-
-  .ourwork-right .work-card:nth-child(3) {
-    flex-basis: 100%;
-    max-width: 260px;
-    margin: 0 auto;
-  }
-}
-@media (max-width: 1300px) {
-  .nuage { 
-    margin-bottom: 150px; 
-    width: 100%; 
-  }
-  .background {
-    margin-top: -153px; 
-  }
-}
 @media (max-width: 900px) {
-  main.page_principale {
-    position: absolute;
-    top: 45%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    z-index: 6;
-    width: 100%;
-    pointer-events: none;
-  }
-
-  .logo-haut {
-    height: 45px;
-  }
-
-  nav ul {
-    gap: 20px;
-  }
-  
-  nav a {
-    font-size: 1rem;
-  }
-
-  .tagline {
-    font-size: 1.8vw;
-    padding: 1.5vw 3vw;
-  }
-
-  .ourwork-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .ourwork-right {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .work-card {
-    width: 240px;
-    height: 200px;
-  }
-
-  .nuage {
-    margin-bottom: 300px;
-    width: 100%;
-  }
-
-  .about-us {
-    flex-direction: column;
-    text-align: center;
-    padding: 60px 5% 80px 5%;
-    gap: 40px;
-    padding-top: 90px;
-  }
-  .background {
-    margin-top: -300px;
-  }
-}
-@media only screen and (max-device-width: 854px) and (min-device-width: 852px) and (max-device-height: 1281px) and (min-device-height: 1279px) {
-  .nuage { margin-bottom: 860px; width: 100%; }
-  .background {
-    margin-top: -860px;
-  }
-  main.page_principale {
-    position: absolute;
-    top: 20%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    z-index: 6;
-    width: 100%;
-    pointer-events: none;
-  }
-}
-@media only screen and (max-device-width: 821px) and (min-device-width: 819px) and (max-device-height: 1181px) and (min-device-height: 1179px) {
-  .nuage { margin-bottom: 750px; width: 100%; }
-  .background {
-    margin-top: -750px;
-  }
-  main.page_principale {
-    position: absolute;
-    top: 25%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    z-index: 6;
-    width: 100%;
-    pointer-events: none;
-  }
-}
-@media only screen and (max-device-width: 769px) and (min-device-width: 767px) and (max-device-height: 1025px) and (min-device-height: 1023px) {
-  .nuage { margin-bottom: 580px; width: 100%; }
-  .background {
-    margin-top: -580px;
-  }
-  main.page_principale {
-    position: absolute;
-    top: 30%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    z-index: 6;
-    width: 100%;
-    pointer-events: none;
-  }
-}
-
-/* ==============================
-   MOBILE
-   ============================== */
-@media (max-width: 600px) {
-  
-  main.page_principale {
-    position: absolute;
-    top: 35%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    z-index: 6;
-    width: 100%;
-    pointer-events: none;
+  html, body {
+    overflow-x: hidden;
   }
 
   header {
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     top: 10px;
-    padding: 0 5%;
   }
-  nav ul { gap: 12px; flex-wrap: wrap; justify-content: center; }
-  nav a { font-size: 0.9rem; padding: 5px 12px; }
-  .logo-centre { width: 35vw; min-width: 140px; max-width: none; }
-  .tagline { font-size: 3.5vw; padding: 3vw 5vw; border-radius: 25px; }
-  .nuage { margin-bottom: 400px; width: 100%; }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .logo-haut {
+    height: 40px;
+  }
+
+  main.page_principale {
+    top: 65%;
+    padding: 0 10px;
+  }
+
+  .tagline {
+    font-size: 3.5vw;
+    padding: 10px 18px;
+    white-space: normal;
+    text-align: center;
+  }
 
   .about-us {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    padding: 60px 5% 80px 5%;
-    gap: 40px;
-    padding-top: 90px;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
+    gap: 30px;
+    padding: 60px 6%;
+    margin-top: -40px;
   }
 
   .about-title {
     font-size: 12vw;
-    line-height: 0.85;
-    margin: 0 auto;
-    display: block;
-    width: fit-content;
+  }
+
+  .logo-centre {
+    margin-top: 0px;
   }
 
   .about-text {
     font-size: 1rem;
-    padding: 0 10px;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 100%;
   }
 
-  .ourwork-left h2,
-  .ourteam-left h2 {
+  .ourwork-section {
+    flex-direction: column;
+    gap: 40px;
+    padding: 80px 6%;
+  }
+
+  .ourwork-left {
+    margin-bottom: 20px;
+  }
+
+  .ourwork-left h2 {
     font-size: 12vw;
-    text-align: center;
-    margin-bottom: 40px;
-    line-height: 0.9;
   }
 
+  .ourwork-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-bottom: 0;
+  }
+
+  /* 🔥 MOBILE WORK-CARD */
   .work-card {
-    width: 100%;
-    max-width: 320px;
-    height: 240px;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
   }
 
   .ourteam-section {
-    padding: 80px 5%;
+    padding: 80px 6%;
   }
-  
+
+  .ourteam-left h2 {
+    font-size: 12vw;
+  }
+
   .card img {
-    height: 300px;
+    height: 280px;
   }
-  
-  .carousel-track {
-    animation: scroll 20s linear infinite;
-  }
-  
+
   .footer-container {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .footer-right {
-    margin-top: 15px;
-  }
-  
-  .footer-right img {
-    margin: 0 10px;
+    justify-content: center;
   }
 
-  
-}
-@media only screen and (max-device-width: 541px) and (min-device-width: 539px) and (max-device-height: 721px) and (min-device-height: 719px) {
-  .nuage { margin-bottom: 400px; width: 100%; }
-  .background {
-    margin-top: -400px;
-  }
-}
-
-@media only screen and (max-device-width: 431px) and (min-device-width: 429px) and (max-device-height: 933px) and (min-device-height: 931px) {
-  .nuage { margin-bottom: 570px; width: 100%; }
-  .background {
-    margin-top: -570px;
-  }
-}
-
-@media only screen and (max-device-width: 379px) and (min-device-width: 377px) and (max-device-height: 679px) and (min-device-height: 676px) {
-  .nuage { margin-bottom: 400px; width: 100%; }
-  .background {
-    margin-top: -400px;
-  }
-}
-
-
-@media only screen and (max-device-width: 415px) and (min-device-width: 413px) and (max-device-height: 897px) and (min-device-height: 895px) {
-  .nuage { margin-bottom: 550px; width: 100%; }
-  .background {
-    margin-top: -550px;
-  }
-}
-
-@media only screen and (max-device-width: 413px)and (min-device-width: 411px) and (max-device-height: 916px) and (min-device-height: 913px){
-  .nuage { margin-bottom: 550px; width: 100%; }
-  .background {
-    margin-top: -550px;
-  }
-}
-@media only screen and (max-device-width: 391px) and (min-device-width: 389px) and (max-device-height: 845px) and (min-device-height: 843px) {
-  .nuage { margin-bottom: 510px; width: 100%; }
-  .background {
-    margin-top: -510px;
-  }
-}
-@media only screen and (max-device-width: 376px) and (min-device-width: 374px) and (max-device-height: 668px) and (min-device-height: 666px) {
-  .background {
-    margin-top: -400px;
-  }
-}
-@media only screen and (max-device-width: 361px) and (min-device-width: 359px) and (max-device-height: 741px) and (min-device-height: 739px) {
-  .nuage { margin-bottom: 450px; width: 100%; }
-  .background {
-    margin-top: -450px; /*je veux tester*/
-  }
-}
-@media only screen and (max-device-width: 345px) and (min-device-width: 343px) and (max-device-height: 883px) and (min-device-height: 881px) {
-  .nuage { margin-bottom: 600px; width: 100%; }
-  .background {
-    margin-top: -600px;
-  }
-  main.page_principale {
+  .nuage {
+    width: 1200px;
+    max-width: none;
     position: absolute;
-    top: 30%; 
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    z-index: 6;
-    width: 100%;
-    pointer-events: none;
+    transform: translateX(-50%);
+  }
+}
+
+/* ==============================
+   PETITS TÉLÉPHONES
+   ============================== */
+
+@media (max-width: 480px) {
+
+  .logo-centre {
+    width: 75vw;
   }
 
+  .tagline {
+    font-size: 4vw;
+  }
+
+  .about-title,
+  .ourwork-left h2,
+  .ourteam-left h2 {
+    font-size: 14vw;
+  }
+
+  .work-card {
+    max-width: 100%;
+  }
+
+  .card img {
+    height: 240px;
+  }
+
+  .nuage {
+    width: 1300px;
+    max-width: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
