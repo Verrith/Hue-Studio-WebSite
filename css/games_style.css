@@ -151,7 +151,7 @@
     color: #a01abf;
     text-align: center;
     padding: 20px 0;
-    margin-top: 70px;
+    margin-top: -10px;
 }
 
 /* =========================================
@@ -179,94 +179,19 @@
 /* ==============================
    TABLET
    ============================== */
-@media only screen and (max-device-width: 1281px) and (min-device-width: 1279px) and (max-device-height: 801px) and (min-device-height: 799px) {
-  .our-games-title {
-    margin-top: -150px;
+@media (max-width: 1200px) {
+  .logo-centre {
+    width: 30vw;
+    margin-top: 210px;
   }
-}
-@media only screen and (max-device-width: 1025px) and (min-device-width: 1023px) and (max-device-height: 601px) and (min-device-height: 599px) {
-  main.page_principale {
-    top: 70%; 
+  .nuage {
+    width: 1200px;
+    max-width: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
-}
-@media only screen and (max-device-width: 1025px) and (min-device-width: 1023px) and (max-device-height: 1367px) and (min-device-height: 1365px) {
-  .our-games-title {
-    margin-top: -851px;
-  }
-}
-@media only screen and (max-device-width: 913px) and (min-device-width: 911px) and (max-device-height: 1369px) and (min-device-height: 1367px) {
-  .our-games-title {
-    margin-top: -901px;
-  }
-}
-@media only screen and (max-device-width: 854px) and (min-device-width: 852px) and (max-device-height: 1281px) and (min-device-height: 1279px) {
-  .our-games-title {
-    margin-top: -860px;
-  }
-}
-@media only screen and (max-device-width: 821px) and (min-device-width: 819px) and (max-device-height: 1181px) and (min-device-height: 1179px) {
-  .our-games-title {
-    margin-top: -750px;
-  }
-}
-@media only screen and (max-device-width: 769px) and (min-device-width: 767px) and (max-device-height: 1025px) and (min-device-height: 1023px) {
-  .our-games-title {
-    margin-top: -580px;
-  }
-}
-
-/* ==============================
-   MOBILE
-   ============================== */
-@media only screen and (max-device-width: 541px) and (min-device-width: 539px) and (max-device-height: 721px) and (min-device-height: 719px) {
-  .our-games-title {
-    margin-top: -400px;
-  }
-}
-
-@media only screen and (max-device-width: 431px) and (min-device-width: 429px) and (max-device-height: 933px) and (min-device-height: 931px) {
-  .our-games-title {
-    margin-top: -570px;
-  }
-}
-
-@media only screen and (max-device-width: 415px) and (min-device-width: 413px) and (max-device-height: 897px) and (min-device-height: 895px) {
-  .our-games-title {
-    margin-top: -550px;
-  }
-}
-
-@media only screen and (max-device-width: 413px)and (min-device-width: 411px) and (max-device-height: 916px) and (min-device-height: 913px){
-  .our-games-title {
-    margin-top: -550px;
-  }
-}
-@media only screen and (max-device-width: 391px) and (min-device-width: 389px) and (max-device-height: 845px) and (min-device-height: 843px) {
-  .our-games-title {
-    margin-top: -510px;
-  }
-}
-@media only screen and (max-device-width: 376px) and (min-device-width: 374px) and (max-device-height: 668px) and (min-device-height: 666px) {
-  .our-games-title {
-    margin-top: -400px;
-  }
-}
-@media only screen and (max-device-width: 361px) and (min-device-width: 359px) and (max-device-height: 741px) and (min-device-height: 739px) {
-  .our-games-title {
-    margin-top: -450px;
-  }
-}
-@media only screen and (max-device-width: 345px) and (min-device-width: 343px) and (max-device-height: 883px) and (min-device-height: 881px) {
-  .our-games-title {
-    margin-top: -600px;
-  }
-}
-
-@media (max-width: 900px){
-    .our-games-title {
-        margin-top: -300px;
-        padding-top: 50px;
-    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -325,9 +250,4 @@
 
     .hiraeth .visual-side { background-size: 300%; }
     .witch .visual-side { background-size: 170%; }
-}
-@media (max-width: 1300px) {
-  .our-games-title {
-    margin-top: -153px; 
-  }
 }
