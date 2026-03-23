@@ -464,13 +464,15 @@ main.page_principale {
   }
 
   header {
-    flex-direction: column;
-    gap: 10px;
-    top: 10px;
+    flex-direction: row; /* ⬅️ au lieu de column */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* permet au menu d'aller en dessous */
   }
 
   nav {
     width: 100%;
+    order: 3;
   }
 
   .nav-center {
@@ -509,6 +511,10 @@ main.page_principale {
 
   .logo-haut {
     height: 40px;
+    margin-right: auto;
+  }
+  .translate-btn {
+    margin-left: auto;
   }
 
   main.page_principale {
