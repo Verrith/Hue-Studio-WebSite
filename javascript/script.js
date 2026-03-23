@@ -87,3 +87,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     wrapper.scrollLeft = 0;
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.querySelector(".nav-center");
+
+    // Clic sur le bouton
+    toggle.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+
+    // Fermeture au défilement
+    window.addEventListener("scroll", function () {
+        if (menu.classList.contains("active")) {
+            menu.classList.remove("active");
+        }
+    });
+});
