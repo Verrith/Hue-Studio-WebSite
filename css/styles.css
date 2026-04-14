@@ -1,7 +1,8 @@
 /* ==============================
    RESET & BASE
    ============================== */
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -129,9 +130,8 @@ header li:hover a {
 
 main.page_principale {
   position: absolute;
-  top: 58%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 70vh;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -139,6 +139,9 @@ main.page_principale {
   z-index: 6;
   width: 100%;
   pointer-events: none;
+  padding: 50px 0 0;
+  gap: 10px;
+  background: url('../images/cloud.png') no-repeat top center;
 }
 
 .hero-background-cloud {
@@ -152,15 +155,14 @@ main.page_principale {
 }
 
 .logo-centre {
-  width: 25vw;
+  width: 30vh;
   min-width: 180px;
   max-width: 500px;
   height: auto;
   display: block;
-  margin: 0;
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+  margin-top: 5vh;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
   transition: transform 0.25s ease;
-  z-index: 10;
 }
 
 .logo-centre:hover {
@@ -180,27 +182,9 @@ main.page_principale {
   font-family: 'Fredoka One', cursive, sans-serif;
   pointer-events: auto;
   white-space: nowrap;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* ==============================
-   CLOUD SEPARATOR
-   ============================== */
-
-.nuage {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  pointer-events: none;
-  padding: 0;
-  line-height: 0;
-}
 
 /* ==============================
    ABOUT US
@@ -299,8 +283,12 @@ main.page_principale {
 }
 
 @keyframes floatCard {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-15px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
 }
 
 /* ==============================
@@ -431,43 +419,25 @@ main.page_principale {
 .footer-right img:hover {
   transform: scale(1.2);
 }
-@media (max-width: 1215px) {
-  .logo-centre {
-    margin-top: 100px;
-  }
-  .logo-centre {
-    width: 30vw;
-  }
-}
-@media (max-width: 1150px) {
-  .logo-centre {
-    width: 30vw;
-    margin-top: 200px;
-  }
-  .nuage {
-    width: 1200px;
-    max-width: none;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: -17px;
-  }
-}
+
+
 /* ==============================
    RESPONSIVE MOBILE
    ============================== */
 
 @media (max-width: 900px) {
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
   }
 
   header {
-    flex-direction: row; /* ⬅️ au lieu de column */
+    flex-direction: row;
+    /* ⬅️ au lieu de column */
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* permet au menu d'aller en dessous */
+    flex-wrap: wrap;
+    /* permet au menu d'aller en dessous */
   }
 
   nav {
@@ -476,31 +446,31 @@ main.page_principale {
   }
 
   .nav-center {
-      flex-direction: column;
-      align-items: center;
-      /* Fond transparent par défaut */
-      background: transparent; 
-      width: 100%;
-      border-radius: 20px;
-      margin-top: 10px;
-      padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+    /* Fond transparent par défaut */
+    background: transparent;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 10px 0;
 
-      /* Caché par défaut */
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, background 0.3s ease;
+    /* Caché par défaut */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, background 0.3s ease;
   }
 
   /* Le fond sombre n'apparaît que quand le menu est actif */
   .nav-center.active {
-      background: rgba(0, 0, 0, 0.85);
-      max-height: 300px;
+    background: rgba(0, 0, 0, 0.85);
+    max-height: 300px;
   }
 
   .nav-center li {
     margin: 10px 0;
   }
-  
+
   nav ul {
     gap: 15px;
   }
@@ -515,11 +485,6 @@ main.page_principale {
   }
   .translate-btn {
     margin-left: auto;
-  }
-
-  main.page_principale {
-    top: 65%;
-    padding: 0 10px;
   }
 
   .tagline {
@@ -538,10 +503,6 @@ main.page_principale {
 
   .about-title {
     font-size: 12vw;
-  }
-
-  .logo-centre {
-    margin-top: 0px;
   }
 
   .about-text {
@@ -597,15 +558,6 @@ main.page_principale {
   .footer-right {
     justify-content: center;
   }
-
-  .nuage {
-    width: 1200px;
-    max-width: none;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
 /* ==============================
@@ -613,11 +565,6 @@ main.page_principale {
    ============================== */
 
 @media (max-width: 480px) {
-
-  .logo-centre {
-    width: 75vw;
-  }
-
   .tagline {
     font-size: 4vw;
   }
@@ -636,12 +583,13 @@ main.page_principale {
     height: 240px;
   }
 
-  .nuage {
-    width: 1300px;
-    max-width: none;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+}
+
+@media (min-width: 1920px) and (orientation: landscape) {
+  main.page_principale {
+    height: 78vh;
+  }
+  .logo-centre {
+    width: 30vw;
   }
 }
