@@ -161,6 +161,7 @@ main.page_principale {
   filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
   transition: transform 0.25s ease;
   z-index: 10;
+  margin-top: 10px;
 }
 
 .logo-centre:hover {
@@ -186,12 +187,15 @@ main.page_principale {
 /* ==============================
    CLOUD SEPARATOR
    ============================== */
+/* ==============================
+   CLOUD SEPARATOR
+   ============================== */
 
 .nuage {
   display: block;
   width: 100%;
   max-width: 100%;
-  height: auto;
+  height: 75vh;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -442,7 +446,7 @@ main.page_principale {
 @media (max-width: 1150px) {
   .logo-centre {
     width: 30vw;
-    margin-top: 200px;
+    margin-top: 170px;
   }
   .nuage {
     width: 1200px;
@@ -452,6 +456,7 @@ main.page_principale {
     left: 50%;
     transform: translateX(-50%);
     margin-top: -17px;
+    height: 65vh;
   }
 }
 /* ==============================
